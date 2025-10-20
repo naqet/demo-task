@@ -1,12 +1,23 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Query } from '@nestjs/common';
+import { Interval } from './binance/binance';
 import { AppService } from './app.service';
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly service: AppService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Get('/analysis')
+  async getAnalysis(
+    @Query('symbol') symbol: string,
+    @Query('interval') interval: string,
+    @Query('startTime') startTime: number,
+    @Query('endTime') endTime: number,
+  ) {
+    return this.service.getAnalysis(
+      symbol,
+      interval as Interval,
+      startTime,
+      endTime,
+    );
   }
 }
