@@ -4,6 +4,7 @@
 
 - Clone the repo
 - Set BINANCE_API_URL env variable inside .env file
+  - Example: https://api.binance.com/api/v3/
 
 - Run
 
@@ -20,7 +21,7 @@ npm run dev
 - Use tool like curl to use this API with /analysis endpoint. Example:
 
 ```sh
-curl "http://localhost:3000/analysis?symbol=BTCUSDT&interval=1w&startTime=1760818400000&endTime=1760918500000"
+curl "http://localhost:3000/analysis?symbol=BTCUSDT&interval=1w&startTime=1750818400000&endTime=1760918500000"
 ```
 
 ## Endpoints
