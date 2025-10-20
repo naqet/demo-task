@@ -91,6 +91,7 @@ export class BinanceService {
 
     const klines: KlineData[] = [];
 
+    // Convert Binance Data points to internal ones
     for (const kline of data) {
       if (kline.length < 3) {
         this.logger.log('Kline data malformed');

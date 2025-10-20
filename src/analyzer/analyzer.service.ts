@@ -14,8 +14,6 @@ export class AnalyzerService {
       low: Infinity,
       high: -Infinity,
     };
-    // Get high and low for the period of time
-    // Maybe get trend?
 
     for (const kline of klines) {
       if (kline.low < analysis.low) {
